@@ -22,33 +22,35 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
      private fun showTimePickerDialog(){
-        val timePickerDialog=TimePickerDialog(
+        var TimePickerDialog=TimePickerDialog(
             this,
             TimePickerDialog.OnTimeSetListener{ view, hour, minute ->
                 Log.d("UI_PARTS","$hour:$minute")
+
+         var text = "$hour"
+        if (hour>2){
+            textView.text="おはよう"
+        } else if(hour>10){
+            textView.text="こんにちは"
+        } else if(hour>18){
+            textView.text="こんばんは"
+        }
             },
             13,0,true)
-        timePickerDialog.show()
 
-         if(v.id ==R.id."$2:$00".."$9:$59"){
-             textView1.text = TimePickerDialog.text.toString()
-         } else if (v.id ==R.id."$10:00".."$17:59"){
-             textView2.text = TimePickerDialog.text.toString()
-         } else if (v.id == R.id."$18:00".."$1:59"){
-             textView3.text = TimePickerDialog.text.toString()
-         }
+
      }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
