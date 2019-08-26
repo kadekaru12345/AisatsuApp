@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
             },
             13,0,true)
-
+           TimePickerDialog.show()
 
      }
 }
