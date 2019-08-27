@@ -27,16 +27,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             TimePickerDialog.OnTimeSetListener{ view, hour, minute ->
                 Log.d("UI_PARTS","$hour:$minute")
 
-         var text = "$hour"
-        if (hour>2){
-            textView.text="おはよう"
-        } else if(hour>10){
-            textView.text="こんにちは"
-        } else if(hour>18){
-            textView.text="こんばんは"
-        }
+                if (2<=hour && hour<10){
+                    textView.text="おはよう"
+                } else if(10<=hour && hour<18){
+                    textView.text="こんにちは"
+                } else {
+                    textView.text="こんばんは"
+                }
+
+
             },
-            13,0,true)
+            24,0,true)
+
            TimePickerDialog.show()
 
      }
